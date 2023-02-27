@@ -1,5 +1,4 @@
 from Game import Game
-from random import randint
 
 
 if __name__ == '__main__':

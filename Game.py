@@ -1,11 +1,11 @@
 from Casino import Casino
 from Player import Player
-from random import shuffle, randint
+from random import shuffle
 
 
 class Game:
     def __init__(self, num_player, num_casino, num_round):
-        self.players = [Player(human=True)] + [Player() for i in range(num_player - 1)]
+        self.players = [Player(human=True)] + [Player(name=chr(ord('A') + i)) for i in range(num_player - 1)]
         self.casinos = [Casino(str(i + 1)) for i in range(num_casino)]
         self.num_casino = num_casino
         self.num_player = num_player
@@ -31,4 +31,5 @@ class Game:
 
     def init_round(self):
         self.set_casino_bill()
-        self.print_casino_bill()
+
+
