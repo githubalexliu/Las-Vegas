@@ -9,3 +9,6 @@ class Casino:
 
     def print_bill(self):
         print('Casino ' + self.name + ' has bills $' + ', $'.join(map(str, self.bill)))
+
+    def clear_bet(self):
+        self.bet = {}
