@@ -42,3 +42,10 @@ class Game:
 
     def clear_casino_bet(self):
         [casino.clear_bet() for casino in self.casinos]
+
+    def play_round(self):
+        player_index = 0
+        while sum([player.dice for player in self.players]) > 0:
+            self.players[player_index].roll_dice()
+            a = input('asdf')
+
