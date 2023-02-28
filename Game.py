@@ -36,11 +36,9 @@ class Game:
     def init_casino(self):
         self.set_casino_bill()
         self.clear_casino_bet()
-        # TODO Clear casino bet
 
-    def init_player(self):
-        # TODO add tokens to player, add dice to player
-        pass
+    def init_player(self, token=2, dice=8):
+        [player.init_round(token, dice) for player in self.players]
 
     def clear_casino_bet(self):
         [casino.clear_bet() for casino in self.casinos]
