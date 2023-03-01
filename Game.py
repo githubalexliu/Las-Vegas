@@ -5,7 +5,7 @@ from random import shuffle
 
 class Game:
     def __init__(self, num_player, num_casino, num_round):
-        self.players = [Player(human=True)] + [Player(name=chr(ord('A') + i)) for i in range(num_player - 1)]
+        self.players = [Player(human=True)] + [Player(name='Bot ' + chr(ord('A') + i)) for i in range(num_player - 1)]
         self.casinos = [Casino(str(i + 1)) for i in range(num_casino)]
         self.num_casino = num_casino
         self.num_player = num_player
@@ -25,6 +25,7 @@ class Game:
     def set_casino_bill(self):
         casino_bill = self.generate_casino_bill()
         [self.casinos[i].set_bill(casino_bill[i]) for i in range(self.num_casino)]
+        self.print_casino_bill()
 
     def print_casino_bill(self):
         [casino.print_bill() for casino in self.casinos]
