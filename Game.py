@@ -5,7 +5,7 @@ from random import shuffle
 
 class Game:
     def __init__(self, num_player, num_casino, num_round):
-        self.players = [Player(human=True)] + [Player(name='Bot ' + chr(ord('A') + i)) for i in range(num_player - 1)]
+        self.players = [Player(is_human=True)] + [Player(name='Bot ' + chr(ord('A') + i)) for i in range(num_player - 1)]
         self.casinos = [Casino(str(i + 1)) for i in range(num_casino)]
         self.num_casino = num_casino
         self.num_player = num_player
@@ -47,6 +47,7 @@ class Game:
     def play_round(self):
         player_index = 0
         while sum([player.dice for player in self.players]) > 0:
-            self.players[player_index].roll_dice()
-            a = input('asdf')
+            if self.players[player_index].dice > 0:
+                self.players[player_index].roll_dice()
+                self.players[player_index].choose_casino()
 
