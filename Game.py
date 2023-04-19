@@ -47,7 +47,8 @@ class Game:
     def play_round(self):
         player_index = 0
         while sum([player.dice for player in self.players]) > 0:
-            if self.players[player_index].dice > 0:
-                self.players[player_index].roll_dice()
-                self.players[player_index].choose_casino()
+            current_player = self.players[player_index]
+            if current_player.dice > 0:
+                current_player.roll_dice()
+                current_player.choose_casino()
 
