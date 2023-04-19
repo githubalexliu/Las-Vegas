@@ -49,6 +49,6 @@ class Game:
         while sum([player.dice for player in self.players]) > 0:
             current_player = self.players[player_index]
             if current_player.dice > 0:
-                current_player.roll_dice()
-                current_player.choose_casino()
-
+                player_casino_choice = current_player.choose_casino()
+                casino_choice = self.casinos[player_casino_choice['casino']]
+                casino_choice.update_bet(current_player.name, player_casino_choice['dice'])

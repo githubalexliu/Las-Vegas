@@ -8,7 +8,11 @@ class Casino:
         self.bill = bill
 
     def print_bill(self):
-        print('Casino ' + self.name + ' has bills $' + ', $'.join(map(str, self.bill)))
+        print(f'Casino {self.name} has bills ${", $".join(map(str, self.bill))}')
 
     def clear_bet(self):
         self.bet = {}
+
+    def update_bet(self, name, dice):
+        self.bet[name] = dice
+        # print('Casino ' + self.name + )
