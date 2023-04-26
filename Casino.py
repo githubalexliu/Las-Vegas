@@ -13,6 +13,6 @@ class Casino:
     def clear_bet(self):
         self.bet = {}
 
-    def update_bet(self, name, dice):
-        self.bet[name] = dice
-        # print('Casino ' + self.name + )
+    def update_bet(self, player_name, dice):
+        self.bet[player_name] = dice
+        print(f'Casino {self.name} has {dice} new bets from {player_name}')

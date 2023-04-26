@@ -50,5 +50,5 @@ class Game:
             current_player = self.players[player_index]
             if current_player.dice > 0:
                 player_casino_choice = current_player.choose_casino()
-                casino_choice = self.casinos[player_casino_choice['casino']]
+                casino_choice = self.casinos[int(player_casino_choice['casino']) - 1]
                 casino_choice.update_bet(current_player.name, player_casino_choice['dice'])
